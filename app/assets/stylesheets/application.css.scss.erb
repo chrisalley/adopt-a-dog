@@ -1,0 +1,517 @@
+/* 
+*= require_self 
+*= require_tree . 
+*/
+
+body {
+  background-image: url(<%= asset_path 'background.png' %>);
+  font-family: "Helvetica";
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+div#overall {
+  width: 960px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+div#header {
+  width: 960px;
+  background-image: url(<%= asset_path 'header.png' %>); 
+  height: 425px;
+  color: #9fbe67;
+  margin-top: -16px;
+  padding: 0;
+  line-height: 1.2;
+}
+
+div#header ul {
+  margin-left: 0;
+  margin-top: 38px;
+  position: absolute;
+}
+
+div#header li {
+  display: inline;
+  font-family: "Helvetica Neue";
+  font-size: 15px;
+  font-weight: bolder;
+  padding: 0;
+  padding-right: 15px;  	
+}
+
+img#facebook {
+  position: absolute;
+  margin-left: 710px;
+  margin-top: 32px;
+}
+
+img#donate {
+  position: absolute;
+  margin-left: 760px;
+  margin-top: 32px;
+}
+
+img#logo {
+  position: absolute;
+  margin-left: 40px;
+  margin-top: 94px;
+}
+
+div#header p {
+  position: absolute;
+  margin-left: 40px;
+  margin-top: 266px;
+  width: 500px;
+  font-family: "Helvetica";
+  font-size: 29px;
+  color: #684f40;
+}
+
+div#middle {
+  width: 880px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+div#flash_notice {
+  margin-top: 10px;
+  background-color: #3999B7;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+div#errorExplanation {
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+div#errorExplanation h2 {
+  padding-left: 15px;
+  color: white;
+}
+
+nav.pagination {
+  text-align: center;
+  clear: both;
+}
+
+ul.administration {
+  margin-left: -40px;
+}
+
+ul.administration li {
+  display: inline;
+  padding-right: 15px;
+}
+
+div#content {
+  float: left;
+  width: 540px;
+  text-align: justify;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+div#content ul.news {
+  list-style-type: none;
+  padding: 0;
+}
+
+div#content ul.news li {
+}
+
+div#content ul.news li div.date {
+  background-color: #ded2b2;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin: 0;
+  font-size: 11px;
+  color: #684f40;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 40px;
+  text-align: center;
+  float: left;
+}
+
+div#content ul.news li div {
+  margin-left: 80px;
+}
+
+h1 {
+  font-size: 29px;
+  color: #7fac39;
+  font-weight: bold;
+  margin: 0;
+  margin-top: -20px;
+}
+
+h2 {
+  font-size: 15px;
+  color: #81ae38;
+  font-weight: bold;
+}
+
+p {
+  font-size: 13px;
+  color: #303030;
+}
+
+span {
+  font-size: 13px;	
+  color: #709a2d;
+  font-weight: bold;
+}
+
+dt {
+  font-size: 13px;	
+  color: #303030;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+dd {
+  font-size: 13px;	
+  color: #303030;
+  margin-left: 0;	
+  margin-bottom: 30px;
+}
+
+ol {
+  color: #348eaf;
+  font-size: 13px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+ol li p {
+  color: #303030;
+  font-size: 13px;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+input, select {
+  background-color: #d9e4c0;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 0;
+  padding: 10px;
+  width: 520px;
+}
+
+select {
+  height: 30px;
+  width: 150px;
+}
+
+textarea {
+  background-color: #d9e4c0;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 0;
+  padding: 10px;
+  height: 200px;
+  width: 520px;
+  line-height: 1.5;
+}
+
+input[type="checkbox"] {
+  width: 10px;
+}
+
+input[type="submit"] {
+  width: 150px;
+  border-radius: 30px;
+  background-color: #3999b7;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+div#aside {
+  margin-left: 580px;
+  width: 300px;
+  padding-left: 0px;
+}
+
+div#aside h2 {
+  font-family: "Helvetica";
+  font-size: 23px;
+  font-weight: bold;
+  color: #f7f3e7;
+  margin: 0;
+  padding-top: 12px;
+  padding-left: 12px;
+}
+
+div#aside p {
+  font-family: "Helvetica";
+  font-size: 13px;
+  color: #303030;
+  margin-top: 10px;
+  padding-left: 12px;
+}
+
+div#aside a {
+  font-weight: bold;
+}
+
+div#aside img {
+  border-radius: 10px;
+}
+
+div#aside h2 {
+  color: #709a2d;
+  font-family: "Helvetica Neue";
+  font-weight: bolder;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+div#aside a {
+  color: #303030;	
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+div#aside a:hover {
+  color: #684f40;
+}
+
+div#aside div {
+  width: 300px;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+div#aside div#meetme {
+  height: 282px;
+}
+
+div#aside div#meetme p {
+  margin-top: 10px;
+  float: left;
+  width: 165px;
+}
+
+div#aside div#meetme img#meetme {
+  margin-top: 4px;
+}
+
+div#aside div#helpfulresources {
+  background-color: #d9e4c0;
+}
+
+div#aside div#administration {
+  background-color: #d9e4c0;
+}
+
+div.left_dog, div.centre_dog, div.right_dog {
+  width: 265px;
+  height: 375px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
+
+div.centre_dog {
+  margin-left: 42px;
+}
+
+div.right_dog {
+  margin-left: 42px;
+}
+
+div.left_dog img {
+  border-radius: 10px;
+}
+
+div.centre_dog img {
+  border-radius: 10px;
+}
+
+div.right_dog img {
+  border-radius: 10px;	
+}
+
+div#dog_photos {
+  float: left;
+  width: 430px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+div#dog_photos img {
+  border-radius: 10px;	
+}
+
+div#dog_details {
+  margin-left: 450px;
+  width: 430px;
+}
+
+div#dog_details div#sex {
+  width: 70px;
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+div#dog_details div#weight {
+  width: 70px;
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 0px;
+}
+
+div#dog_details div#age {
+  width: 70px;	
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 0px;
+}
+
+div#dog_details div#breed {
+  width: 430px;
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 70px;
+}
+
+div#dog_details div#characteristics {
+  width: 430px;
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 140px;	
+}
+
+div#dog_details div#contact_us {
+  width: 430px;	
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 300px;
+}
+
+div.happy_tail {
+  width: 540px;
+  height: 180px;
+}
+
+div.happy_tail img {
+  width: 145px;
+  float: left;
+  margin-right: 15px;
+}
+
+div#happy_tail {
+  width: 540px;
+}
+
+div#happy_tail div#photo {
+  width: 145px;
+  float: left;
+  border-radius: 10px;
+}
+
+div#happy_tail div#information {
+  margin-left: 160px;
+}
+
+div#footer {
+  width: 960px;	
+  clear: both;
+  margin-bottom: 120px;
+}
+
+div#footer div#helpfulresources {
+  width: 880px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #d9e4c0;
+  font-family: "Helvetica Neue";
+  font-weight: bolder;
+  font-size: 15px;
+  margin-left: 40px;
+}
+
+div#footer div#helpfulresources ul {
+  margin-left: -10px;
+  padding-top: 21px;  
+}
+
+div#footer div#helpfulresources li#helpfulresources {
+  color: #684f40;
+}
+
+div#footer div#helpfulresources li {
+  display: inline;
+  padding-right: 20px;
+  color: #719b2e;
+}
+
+div#footer div#trees {
+  background-image: url(<%= asset_path 'trees.png' %>);
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: absolute;
+  margin-left: 835px;
+  margin-top: -70px;
+  width: 65px;
+  height: 60px;
+}
+
+div#footer div#contactus {
+  width: 400px;
+  position: absolute;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div#footer div#contactus p {
+  color: #303030;
+  font-size: 11px;
+  line-height: 0.5;
+}
+
+div#footer div#information {
+  width: 400px;
+  position: absolute;
+  margin-left: 520px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div#footer div#information p {
+  color: #303030;
+  font-size: 11px;
+  line-height: 0.5;
+  text-align: right;
+}
+
+a {
+  color: #709a2d;	
+  font-weight: bolder;
+  text-decoration: none;	
+}
+
+a:hover {
+  color: #684f40;
+}

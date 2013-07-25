@@ -1,0 +1,14 @@
+<% title @page.title %>
+
+<% if can? :manage, @page %>
+	<ul class="administration">
+	  <li><%= link_to 'Edit Page', edit_page_path(@page) %></li>
+	  <li><%= link_to 'Delete Page', @page, :confirm => 'Are you sure?', :method => :delete %></li>
+	</ul>
+<% end %>
+
+<%= raw markdown_to_html @page.content %>
+
+<% if @page.form? %>
+  <p><%= link_to "Download Application form", @page.form.url.to_s %>
+<% end %>

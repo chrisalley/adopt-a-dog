@@ -1,0 +1,20 @@
+<% title "Edit Profile" %>
+
+<%= form_for @user do |f| %>  
+  <%= render "shared/error_messages", :target => @user %>  
+  <p>  
+    <%= f.label :name %><br />  
+    <%= f.text_field :name %>  
+  </p>
+  <p>  
+    <%= f.label :email_address %><br />  
+    <%= f.email_field :email_address %>  
+  </p>
+  <p>
+    <%= f.label :role, "Role" %><br />
+    <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+  </p>
+	<p>
+    <%= f.submit "Edit Profile" %>  
+  </p>
+<% end %>

@@ -1,0 +1,12 @@
+<% title "Messages" %>
+
+<% @messages.each do |message| %>
+  <div>
+	  <h2>From: <%= link_to message.name, message_path(message) %></h2>
+		<p><%= truncated_text message.content %> <%= link_to "Read more", message_path(message) %></p>
+  </div>
+<% end %>
+
+<%= paginate @messages %> 
+
+<p><%= link_to 'Contact Page', contact_path %></p>

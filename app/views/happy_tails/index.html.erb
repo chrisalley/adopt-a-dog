@@ -1,0 +1,20 @@
+<% title "Happy Tails" %>
+
+<% if can? :create, HappyTail %>
+  <ul class="administration">
+    <li><%= link_to 'New Happy Tail', new_happy_tail_path %></li>
+  </ul>
+<% end %>
+
+<p>To contribute to our Happy Tails page with your adopted dog, please send in your story with one photo and <%= mail_to "info@adoptadog.org.nz", "email it to us", :encode => "hex" %>.</p>
+
+<% @happy_tails.each do |happy_tail| %>
+  <div class="happy_tail">
+	  <h2><%= link_to happy_tail.name, happy_tail_path(happy_tail) %></h2>
+		<%= image_tag happy_tail.photo.url(:regular) %>
+		<p><%= truncated_text happy_tail.content %></p>
+		<p><%= link_to "Read more", happy_tail_path(happy_tail) %></p>
+  </div>
+<% end %>
+
+<%= paginate @happy_tails %>

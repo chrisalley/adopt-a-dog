@@ -1,0 +1,12 @@
+<% title @user.name %>
+
+<% if can? :manage, @user %>
+	<ul class="administration">
+	  <li><%= link_to 'Edit User', edit_user_path(@user) %></li>
+	  <li><%= link_to 'Delete User', @user, :confirm => "Are you sure?", :method => :delete %></li>
+	</ul>
+<% end %>
+
+<p>Email Address: <%= @user.email_address %></p>
+
+<p>Role: <%= @user.role.to_s.humanize %>

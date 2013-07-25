@@ -1,0 +1,14 @@
+<% title "Message" %>
+
+<% if can? :manage, @message %>
+	<ul class="administration">
+	  <li><%= link_to 'See more messages', messages_path %></li>
+	  <li><%= link_to 'Delete message', @message, :confirm => 'Are you sure?', :method => :delete %></li>
+	</ul>
+<% end %>
+
+<p><span>From:</span> <%= @message.name %></p>
+<p><span>Email Address:</span> <%= @message.email_address %></p>
+<p><span>Phone Number:</span> <%= @message.phone_number %></p>
+<p><span>Question/Comment:</span></p> 
+<%= raw markdown_to_html @message.content %>

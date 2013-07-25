@@ -1,0 +1,42 @@
+<% title @dog.name %>
+
+<% if can? :manage, @dog %>
+	<ul class="administration">
+    <li><%= link_to 'Edit Dog', edit_dog_path(@dog) %></li>
+    <li><%= link_to 'Delete Dog', @dog, :confirm => 'Are you sure?', :method => :delete %></li>
+  </ul>
+<% end %>
+
+<div id="dog_photos">
+	<% if @dog.dog_photos.count > 0 %>
+    <%= image_tag @dog.dog_photos.first.dog_photo.url(:regular) %>
+  <% else %>
+    <%= image_tag("dog-with-no-photo.png", :border => false) %>
+  <% end %>
+</div>
+
+<div id="dog_details">
+	<div id="sex">
+  	<h2>Sex:</h2> 
+	  <p><%= @dog.sex.humanize %></p>
+	</div>
+	<div id="weight">
+	  <h2>Weight:</h2> 
+	  <p><%= @dog.weight %></p>
+	</div>
+	<div id="age">
+	  <h2>Age:</h2>
+	  <p><%= @dog.age %></p>
+	</div>
+	<div id="breed">
+    <h2>Breed:</h2>
+	  <p><%= @dog.breed %></p>
+	</div>
+	<div id="characteristics">
+	  <h2>Characteristics:</h2>
+	  <%= raw markdown_to_html @dog.characteristics %>
+	</div>
+	<div id="contact_us">
+	  <%= link_to image_tag("contact-us-about-this-dog.png", :border => false), "/contact" %><br />
+	</div>
+</div>

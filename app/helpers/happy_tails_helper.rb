@@ -1,0 +1,2 @@
+module HappyTailsHelper
+end

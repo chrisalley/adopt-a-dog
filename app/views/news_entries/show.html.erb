@@ -1,0 +1,12 @@
+<% title @news_entry.title %>
+
+<% if can? :manage, @news_entry %>
+	<ul class="administration">
+	  <li><%= link_to 'Edit News Entry', edit_news_entry_path(@news_entry) %></li>
+	  <li><%= link_to 'Delete News Entry', @news_entry, :confirm => 'Are you sure?', :method => :delete %></li>
+	</ul>
+<% end %>
+
+<%= raw markdown_to_html @news_entry.content %>
+
+<p><%= link_to "More News & Events", news_entries_path %></p>

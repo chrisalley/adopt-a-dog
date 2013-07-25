@@ -1,0 +1,37 @@
+<% title "Contact" %>
+
+<% if can? :manage, Message %>	
+  <ul class="administration">
+		<li><%= link_to 'View Messages', messages_path %></li>
+  </ul>
+<% end %>
+
+<p>Have a question or comment for us? Use the form below to get in touch, and we’ll get back to you as soon as we can.</p>
+
+<h2>Mailing Address:</h2>
+
+<p>Adopt a Dog<br />
+PO Box 75<br />
+Clive<br />
+Hawkes Bay<br />
+New Zealand</p>
+
+<%= form_for @message do |f| %>
+	<p>  
+	  <%= f.label :name %><br />  
+	  <%= f.text_field :name %>  
+	</p>
+	<p>  
+	  <%= f.label :email_address %><br />  
+	  <%= f.text_field :email_address %>  
+	</p>  
+	<p>  
+	  <%= f.label :phone_number %><br />  
+	  <%= f.text_field :phone_number %>  
+	</p>  
+	<p>  
+	  <%= f.label :content, "Question/Comment:" %><br />  
+	  <%= f.text_area :content %>  
+	</p>  
+	<p><%= f.submit "Send Message" %></p>  
+<% end %>

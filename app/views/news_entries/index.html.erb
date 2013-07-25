@@ -1,0 +1,9 @@
+<% title "News & Events" %>
+
+<% if can? :create, NewsEntry %>
+  <ul class="administration">
+    <li><%= link_to 'New News Entry', new_news_entry_path %></li>
+  </ul>
+<% end %>
+
+<%= render 'shared/news_entries', :locals => { :news_entries => @news_entries } %>

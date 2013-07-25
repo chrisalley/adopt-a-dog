@@ -1,0 +1,14 @@
+<%= form_for @question do |f| %>  
+  <%= render "shared/error_messages", :target => @question %>    
+  <p>
+    <%= f.label :question, "Question" %><br />
+    <%= f.text_area :question, :rows => 5 %>
+  </p>
+  <p>  
+    <%= f.label :answer, "Answer" %><br />
+    <%= f.text_area :answer, :rows => 5 %>  
+  </p>
+  <p>  
+    <%= f.submit %>  
+  </p>
+<% end %>

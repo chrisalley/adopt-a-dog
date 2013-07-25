@@ -1,0 +1,10 @@
+<% title "Users" %>
+
+<% @users.each do |user| %>
+  <div>
+    <p><%= link_to user.name, user %><br />
+    <%= user.email_address %></p>
+  </div>
+<% end %>
+
+<%= paginate @users %> 

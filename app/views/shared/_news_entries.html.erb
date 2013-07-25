@@ -1,0 +1,13 @@
+<ul class="news">
+	<% @news_entries.each do |news_entry| %>
+		<li>
+		  <div class="date"><%= short_date news_entry %></div>
+		  <div>
+			  <h2><%= link_to news_entry.title, news_entry_path(news_entry) %></h2>
+				<p><%= truncated_text news_entry.content %> <%= link_to "Read more", news_entry_path(news_entry) %></p>
+		  </div>
+		</li>
+	<% end %>
+</ul>
+
+<%= paginate @news_entries %> 

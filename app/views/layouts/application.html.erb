@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="keywords" content="" />
+    <meta http-equiv="description" content="" />
+    <meta http-equiv="author" content="Chris Alley" />
+    <title>Adopt a Dog | <%= yield(:title) || "Untitled" %></title>
+    <%= auto_discovery_link_tag(:atom, news_entries_path(:atom)) %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+		<div id="overall">
+	    <div id="header">
+	    	<ul>
+		      <li><%= link_to "Home", root_url %></li>
+		      <li><%= link_to "Dogs for Adoption", dogs_path %></li>
+		      <li><%= link_to "Foster", "/fostering-a-dog" %></li>
+		      <li><%= link_to "Volunteer", "/volunteer" %></li>
+		      <li><%= link_to "About", "/about-adopt-a-dog" %></li>
+		      <li><%= link_to "News & Events", news_entries_path %></li>
+		      <li><%= link_to "Contact", contact_path %></li>
+		    </ul>
+        <%= link_to image_tag("facebook.png", :id => "facebook", :border => false), "http://www.facebook.com/home.php?sk=group_171885319489239" %>
+	      <%= link_to image_tag("donate-now.png", :id => "donate", :border => false), "/donate" %>
+        <%= link_to image_tag("logo.png", :id => "logo", :border => false), root_url %>
+	      <p>Providing safe havens for rescued pound dogs and finding them permanent loving homes.</p>
+	    </div>
+	    <div id="middle">
+		    <% if content_for?(:dogs) %>
+		      <%= yield(:dogs) %>
+		    <% else %>		
+					<div id="content">
+					  <h1><%= yield(:title) %></h1>
+						<% flash.each do |name, msg| %>
+					    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+					  <% end %>
+					  <%= yield %>
+					</div>
+					<div id="aside">
+						<%= render 'shared/meet_me' %>
+						<%= render 'shared/foster_homes_needed' %>
+						<%= render 'shared/happy_tails' %>
+						<%= render 'shared/helpful_resources' %>
+						<%= render 'shared/administration' %>
+					  <%= yield :aside %>
+					</div>
+		  	<% end %>
+		  </div>
+      <div id="footer">
+	      <div id="helpfulresources">
+	        <ul>
+		        <li id="helpfulresources">Helpful Resources:</li>
+		        <li><%= link_to "How Adoption Works", "/how-adoption-works" %></li>
+		        <li><%= link_to "Dog Care", "/dog-care" %></li>
+		        <li><%= link_to "FAQs", questions_path %></li>
+		      </ul>
+		    </div>
+		    <div id="trees"></div>
+		    <div id="contactus">
+			    <p><%= link_to "Contact Us", "/contact" %></p>
+		      <p><strong>Adopt a Dog Hawkes Bay</strong><p>
+		      <p>&copy; 2011 Adopt a Dog Hawkes Bay</p>
+		    </div>
+		    <div id="information">
+			    <p>Subscribe to the <%= link_to "news feed", news_entries_url(:atom) %>.</p>
+			    <p>Find us on <a href="http://www.facebook.com/home.php?sk=group_171885319489239">Facebook</a>.</p>
+			    <p>Website design donated by <a href="http://mandybryers.wordpress.com">Mandy Bryers</a>, development donated by <a href="http://www.chrisalley.info">Chris Alley</a>.</p>
+			  </div>
+	    </div>
+    </div>
+  </body>
+</html>

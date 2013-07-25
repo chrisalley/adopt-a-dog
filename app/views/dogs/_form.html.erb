@@ -1,0 +1,47 @@
+<%= nested_form_for @dog, :html => { :multipart => true } do |f| %>  
+  <%= render "shared/error_messages", :target => @dog %>
+  <%= render "shared/markdown_syntax_guide" %>  
+  <p>
+    <%= f.label :name, "Name" %><br />
+    <%= f.text_field :name %>  
+  </p>
+  <p>  
+    <%= f.label :sex %><br />
+    <%= f.collection_select :sex, Dog::SEXES, :to_s, :humanize, :include_blank => true %>
+  </p>
+  <p>
+    <%= f.label :weight, "Weight in KG" %><br />
+    <%= f.text_field :weight %>  
+  </p>
+  <p>
+    <%= f.label :age, "Age" %><br />
+    <%= f.text_field :age %>  
+  </p>
+  <p>
+    <%= f.label :breed, "Breed" %><br />
+    <%= f.text_field :breed %>  
+  </p>
+  <p>
+    <%= f.label :characteristics, "Characteristics" %><br />
+    <%= f.text_area :characteristics, :rows => 5 %>  
+  </p>
+	<label>Dog Photos</label>
+  <%= f.fields_for :dog_photos do |dog_photo_form| %>
+    <p>
+    <% if dog_photo_form.object.dog_photo_file_name.blank? %>
+      <%= dog_photo_form.file_field :dog_photo %>
+    <% else %>
+      <%= dog_photo_form.hidden_field :dog_photo %>
+      <%= image_tag dog_photo_form.object.dog_photo.url(:thumbnail) %><br />
+    <% end %>
+    <%= dog_photo_form.link_to_remove "Remove Photo" %><br />
+    </p>
+  <% end %>
+	<p><%= f.link_to_add "Add Photo", :dog_photos %></p>	
+  <p>
+    <%= f.check_box :adopted %> <%= f.label :adopted, "Adopted? (this will hide the listing from the public, but keep a record of the dog in the database)" %>
+  </p>
+	<p>  
+	  <%= f.submit "Submit" %>  
+	</p>
+<% end %>

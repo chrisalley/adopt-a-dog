@@ -1,0 +1,23 @@
+<% title "Dogs" %>		
+
+<% if can? :create, Dog %>	
+  <ul class="administration">
+		<li><%= link_to 'New Dog', new_dog_path %></li>
+  </ul>
+<% end %>
+
+<% @dogs.each do |dog| %>
+  <% if can? :read, dog %>
+ 	 <div class="<%= cycle("left_dog", "centre_dog", "right_dog") %>">
+		  <% if dog.dog_photos.count > 0 %>
+	  	  <%= image_tag dog.dog_photos.first.dog_photo.url(:thumbnail) %>
+			<% else %>
+		    <%= image_tag("dog-with-no-photo-thumbnail.png", :border => false) %>
+	    <% end %>
+		  <h2><%= link_to dog.name, dog %></h2>
+		  <p><%= truncated_text dog.characteristics %> <%= link_to "Read more", dog_path(dog) %></p>
+	  </div>
+	<% end %>
+<% end %>
+
+<%= paginate @dogs %>

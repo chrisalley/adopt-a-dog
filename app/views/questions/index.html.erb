@@ -1,0 +1,16 @@
+<% title "FAQs" %>
+
+<% if can? :create, Question %>
+  <ul class="administration">
+    <li><%= link_to 'New Question', new_question_path %></li>
+  </ul>
+<% end %>
+
+<dl>
+<% @questions.each do |question| %>
+  <dt><span>Question:</span> <%= question.question %><% if can? :message, question %> <%= link_to "Edit", edit_question_path(question) %> / <%= link_to 'Delete', question, :confirm => 'Are you sure?', :method => :delete %><% end %></dt>
+  <dd><span>Answer:</span> <%= question.answer %></dd>
+<% end %>
+</dl>
+
+<%= paginate @questions %> 

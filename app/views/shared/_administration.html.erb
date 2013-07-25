@@ -1,0 +1,11 @@
+<% if current_user %>  
+  <div id="administration">
+	  <h2>Administration</h2>
+    <p>Logged in as <%= current_user.name %>. <%= link_to "Log out?", log_out_path %></p>  
+    <p><%= link_to "Edit profile", edit_user_path(current_user) %></p>
+    <p><%= link_to "Log in as a different user", log_in_path %></p>
+    <p><%= link_to "Register new user", register_path %></p>
+		<p><%= link_to "List of users", users_path %></p>
+    <p><%= link_to "List of pages", pages_path %></p>
+</div>
+<% end %>

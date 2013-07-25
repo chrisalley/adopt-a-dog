@@ -1,0 +1,20 @@
+<% title "Happy Tails" %>
+
+<% if can? :manage, @happy_tail %>
+	<ul class="administration">
+	  <li><%= link_to 'Edit Happy Tail', edit_happy_tail_path(@happy_tail) %></li>
+	  <li><%= link_to 'Delete Happy Tail', @happy_tail, :confirm => 'Are you sure?', :method => :delete %></li>
+	</ul>
+<% end %>
+
+<h2><%= @happy_tail.name %></h2>
+
+<div id="happy_tail">
+	<div id="photo">		
+		<%= image_tag @happy_tail.photo.url(:regular) %>
+	</div>
+	<div id="information">
+	  <%= raw markdown_to_html @happy_tail.content %>
+  	<p><%= link_to "See more Happy Tails", happy_tails_path %></p>
+	</div>
+</div>
