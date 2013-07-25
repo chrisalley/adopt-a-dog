@@ -1,0 +1,1 @@
+Source code and other assets in this repository are provided for demonstration purposes only. All files in this repository are © 2011 Adopt a Dog Hawkes Bay. Website design donated by Mandy Bryers, development donated by Chris Alley.
